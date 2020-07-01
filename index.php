@@ -1,3 +1,5 @@
+<?php
+echo <<<EOH
 <!DOCTYPE html>
 <html>
   <head>
@@ -6,3 +8,5 @@
     <p>Hello world</p>
   </body>
 </html>
+EOH;
+?>
