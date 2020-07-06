@@ -10,8 +10,8 @@ include "login_check.php";
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title></title>
-    <link rel="stylesheet" href="style.css">
-    <script src="jquery-3.4.1.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/jquery-3.4.1.min.js"></script>
     <script type="text/javascript">
 $(function(){
        $("ul.sub").hide();
@@ -24,7 +24,7 @@ $(function(){
 });
     </script>
 </head>
-<body>
+<body class="bowh">
 <?php
     include "ec_header.php";
     include "db_path.php";
@@ -43,7 +43,6 @@ WHERE users.user_id = :user";
     <table>
         <?php
         foreach($hisArray as $val){
-            echo "<hr>";
             $sum = $val['価格'] * $val['購入個数'];
             echo <<<EOH
             <tr>

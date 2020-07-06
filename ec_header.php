@@ -3,7 +3,7 @@ if(isset($_SESSION["item_id"])){
     $massege = count($_SESSION["item_id"]);
 }
 else{
-    $massege = "なし";
+    $massege = "0";
 }
 print <<<EOH
 <header>
