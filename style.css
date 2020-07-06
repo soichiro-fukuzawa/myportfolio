@@ -58,14 +58,18 @@ header{
     background-color:#001a33;
     height:40px;
     padding-top:10px;
+    margin-bottom:30px;
 }
 header ul li{
     list-style-type:none;
 }
+header .menu_main{
+    margin-left:75%;
+}
 /*ドロップダウンメニュー*/
 ul.menu li{
     float:left;
-    width:100px;
+    width:120px;
     height:30px;
     position:relative;
     margin-right:20px;
@@ -83,10 +87,18 @@ ul.menu li a{
 }
 ul.menu li:hover{
     box-shadow:0 0 0 1px #fff;
+    border-radius:2px;
 }
 ul.menu li ul.sub{
     position:absolute;
     background-color:white;
+}
+ul.menu li ul.sub li{
+    box-shadow:none;
+    margin-right:0px;
+}
+ul.menu li ul.sub li a{
+    color:#000;
 }
 ul.menu{
     zoom:1;
@@ -97,4 +109,127 @@ ul.menu:after{
     content:".";
     display:block;
     clear:both;
+}
+/*indexpage---------------------------------------------------*/
+#index_body{
+    background-color:#fff;
+}
+#index_box{
+    width:300px;
+    box-shadow:0 0 0 3px #ddd;
+    margin:0 auto;
+    padding:20px 10px;
+    border-radius:5px;
+}
+#index_box p{
+    font-size:13px;
+    font-weight:bold;
+    line-height:25px;
+}
+#index_box p:last-child{
+    font-size:12px;
+    font-weight:normal;
+    margin-top:15px;
+}
+#index_box h1{
+    line-height:60px;
+}
+#index_box input[type="text"],input[type="password"]{
+    width:290px;
+    height:30px;
+    margin-bottom:10px;
+}
+#index_box input[type="submit"]{
+    width:294px;
+    height:35px;
+    background-color:#ddc478;
+    border:none;
+    border-radius:2px;
+    box-shadow:0 0 0 1px #f6aa5f;
+}
+#index_box2{
+    width:330px;
+    margin:0 auto;
+    padding:20px 10px;
+}
+#index_box2 a{
+    color:inherit;
+    text-decoration:none;
+}
+#index_box2 button{
+    cursor:pointer;
+    width:330px;
+    height:35px;
+}
+#index_box2 p{
+    text-align:center;
+}
+/*regist---------------------------------------*/
+#regist_box{
+    width:300px;
+    box-shadow:0 0 0 3px #ddd;
+    margin:0 auto;
+    padding:20px 10px;
+    border-radius:5px;
+}
+#regist_box span{
+    font-size:13px;
+    font-weight:bold;
+    line-height:25px;
+}
+#regist_box p{
+    font-size:12px;
+    margin-top:15px;
+}
+#regist_box h1{
+    line-height:70px;
+}
+#regist_box div{
+    font-size:13px;
+    margin-bottom:15px;
+}
+#regist_box p span{
+    margin-right:38px;
+}
+#regist_box input[type="text"],input[type="password"]{
+    width:290px;
+    height:30px;
+    margin-bottom:10px;
+}
+#regist_box input[type="submit"]{
+    width:294px;
+    height:35px;
+    background-color:#ddc478;
+    border:none;
+    border-radius:2px;
+    box-shadow:0 0 0 1px #f6aa5f;
+}
+/*cart-----------------------------------------------------*/
+#cart_body{
+    background-color:#fff;
+}
+#cart_box{
+    width:60%;
+    margin-left:5%;
+    border-radius:5px;
+    box-shadow:0 0 0 3px #ddd;
+}
+#cart_box2{
+    margin-left:30px;
+    width:20%;
+    border-radius:5px;
+    box-shadow:0 0 0 3px #ddd;
+}
+#cart_box,#cart_box2{
+    float:left;
+}
+#cart_box div{
+    width:98%;
+    padding:1% 1%;
+    border-bottom:2px solid #ddd;
+}
+#cart_box div:last-child{
+    border-bottom:none;
+}
+#cart_box div span{
 }

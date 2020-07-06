@@ -8,7 +8,6 @@ $sth = $dbh->prepare($sql);
 $sth->execute();
 $userArray = $sth->fetchAll(PDO::FETCH_ASSOC);
 foreach($userArray as $users){
-    echo $users["user_name"];
     //入力されたユーザーnameが存在する
     if(isset($_POST["name"])){
         if($_POST["name"] == $users["user_name"]){
@@ -49,7 +48,7 @@ else{
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title></title>
+    <title>アカウント作成</title>
     <link rel="stylesheet" href="style.css">
     <script src="jquery-3.4.1.min.js"></script>
     <script type="text/javascript">
@@ -64,18 +63,21 @@ else{
     });
     </script>
 </head>
-<body>
+<body id="index_body">
     <header>
         <p>新規登録ページ</p>
     </header>
-    <h1>新規登録</h1>
-    <form action="regist.php" method="post">
-        名前：<input type="text" name="name" required><br>
-        パスワード：<input type="password" name="password" required><br>
-        パスワード２：<input type="password" name="password2" required><br>
-        <input type="submit" value="登録">
-    </form>
-    <p><a href="index.php">ログイン</a></p>
-    <div><?php print $error_message; ?></div>
+    <div id="regist_box">
+        <h1>アカウント作成</h1>
+        <div><?php print $error_message; ?></div>
+        <form action="regist.php" method="post">
+            <span>名前</span><input type="text" name="name" required><br>
+            <span>パスワード</span><input type="password" name="password" required><br>
+            <span>もう一度パスワードを入力してください</span><input type="password" name="password2" required><br>
+            <input type="submit" value="アカウントを作成">
+        </form>
+        <p>ログインすることで、<a href="#">利用規約</a> および <a href="#">プライバシー規約</a> に同意するものとみなされます。</p>
+        <p><span>既にアカウントをお持ちですか？→</span><a href="index.php">ログイン</a></p>
+    </div>
 </body>
 </html>

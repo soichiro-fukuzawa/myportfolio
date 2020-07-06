@@ -7,7 +7,7 @@ include "login_check.php";
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title></title>
+    <title>カテゴリー</title>
     <link rel="stylesheet" href="style.css">
     <script src="jquery-3.4.1.min.js"></script>
     <script type="text/javascript">
@@ -44,8 +44,6 @@ $(function(){
     $sth = $dbh->prepare($sql);
     $sth->execute();
     $obArray = $sth->fetchAll(PDO::FETCH_ASSOC);
-    //print_r($obArray);
-    //print_r($cateArray);
     echo "<div id='sotowaku_cate'>";
     $a = 0;
     foreach($cateArray as $user){

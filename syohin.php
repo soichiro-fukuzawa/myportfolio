@@ -1,7 +1,6 @@
 <?php
 session_start();
 if(isset($_POST["cate"])){
-    //print_r($_POST["cate"]);
     $cate = $_POST["cate"];
     include "db_path.php";
     $sql = "SELECT * FROM category WHERE cate_class = :cate";
@@ -19,7 +18,7 @@ else{
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title></title>
+    <title>商品一覧</title>
     <link rel="stylesheet" href="style.css">
     <script src="jquery-3.4.1.min.js"></script>
     <script type="text/javascript">

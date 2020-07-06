@@ -37,7 +37,7 @@ if(isset($_POST["name"])){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title></title>
+    <title>ログイン</title>
     <link rel="stylesheet" href="style.css">
     <script src="jquery-3.4.1.min.js"></script>
     <script type="text/javascript">
@@ -52,18 +52,25 @@ if(isset($_POST["name"])){
     });
     </script>
 </head>
-<body>
-    <?php
-    include "ec_header.php";
-    ?>
+<body id="index_body">
+    <header>
+        
+    </header>
+    <div id="index_box">
     <h1>ログイン</h1>
-    <form action="index.php" method="post">
-        <input type="text" name="name" required><br>
-        <input type="password" name="password" required><br>
-        <input type="submit" value="ログイン">
-    </form>
-    <p><a href="regist.php">新規登録</a></p>
-    <p><a href="#">管理人</a></p>
-    <div><?php print $error_message; ?></div>
+        <form action="index.php" method="post">
+            <p>ユーザーネームとパスワード</p>
+            <input type="text" name="name" placeholder="Username" required><br>
+            <input type="password" name="password" placeholder="Password" required><br>
+            <input type="submit" value="ログイン">
+        </form>
+        <p>続行することで、<a href="#">利用規約</a> および <a href="#">プライバシー規約</a> に同意するものとみなされます。</p>
+    </div>
+    <div id="index_box2">
+        <p>新しいお客様ですか？</p>
+        <button><a href="regist.php">アカウント作成はこちら</a></button>
+        <!--<p><a href="#">管理人</a></p>-->
+        <div><?php print $error_message; ?></div>
+    </div>
 </body>
 </html>

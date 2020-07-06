@@ -1,6 +1,4 @@
 <?php
-//INSERT INTO history VALUES (NOW(),1,1,3);
-//UPDATE object SET quantity = 3, sales_quantity = 2 WHERE item_id = 1;
 session_start();
 include "login_check.php";
 /*//cart.phpで数量変更が押されてきた
@@ -30,14 +28,6 @@ elseif(isset($_POST["kakutei"])){
     $sth = $dbh->prepare($sql);
     $sth->execute();
     $itemArray = $sth->fetchAll(PDO::FETCH_ASSOC);
-    /*echo "アイテムアレイです。<br>";
-    var_dump($itemArray);
-    echo "<hr>アイテム。<br>";
-    var_dump($_SESSION["item_id"]);
-    echo "<hr>ユーザー。<br>";
-    var_dump($_SESSION["user_id"]);
-    echo "<hr>数量です。<br>";
-    var_dump($_SESSION["suryo"]);*/
     //カートに入っている商品の数分、履歴にインサートして更新する
     for($i = 0; $i < count($_SESSION["item_id"]); $i++){
         //INSERT

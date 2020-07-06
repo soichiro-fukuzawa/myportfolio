@@ -12,12 +12,12 @@ print <<<EOH
 EOH;
 if(isset($_SESSION["name"])){
     print <<<EOH
-    <li>
-        <a href="#">{$_SESSION["name"]}さん</a>
+    <li class="menu_main">
+        <a href="#">{$_SESSION["name"]}</a>
         <ul class="sub">
             <li><a href="history.php">購入履歴</a></li>
             <li><a href="#">メニュー</a></li>
-            <li><a href="#">メニュー</a></li>
+            <li><a href="logout.php">ログアウト</a></li>
         </ul>
     </li>
 EOH;
