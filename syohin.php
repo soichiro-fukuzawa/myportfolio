@@ -68,7 +68,7 @@ foreach($itemArray as $kai){
             <figure class="syo_fig">
                 <img src="{$kai["image_url"]}" alt="{$kai["商品名"]}">
                 <figcaption>{$kai["商品名"]}</figcaption>
-                <p>￥{$ketakugiri}</p>
+                <p class="redmoji">￥{$ketakugiri}</p>
 EOH;
         if($kai["個数"] == 0){
             echo "<p>在庫切れ</p>";

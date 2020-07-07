@@ -28,10 +28,13 @@ body{
     margin-right:0;
 }
 .box input[type="submit"]{
-    background-color:#ff0;
-    border:none;
-    border-radius:3px;
     padding:5px;
+    width:100%;
+    height:40px;
+    background-color:#ddc478;
+    border:none;
+    border-radius:2px;
+    box-shadow:0 0 0 1px #f6aa5f;
 }
 figure{
     margin:15px;
@@ -208,28 +211,123 @@ ul.menu:after{
 #cart_body{
     background-color:#fff;
 }
+#cart_body_box{
+    width:100%;
+    position:relative;
+    margin-left:70px;
+}
 #cart_box{
     width:60%;
-    margin-left:5%;
-    border-radius:5px;
-    box-shadow:0 0 0 3px #ddd;
+    float:left;
 }
 #cart_box2{
-    margin-left:30px;
     width:20%;
     border-radius:5px;
     box-shadow:0 0 0 3px #ddd;
+    position:absolute;
+    top:55px;
+    right:12%;
+    padding:12px;
 }
-#cart_box,#cart_box2{
+#cart_box2 input[type="submit"]{
+    width:100%;
+    height:20px;
+    background-color:#ddc478;
+    border:none;
+    border-radius:2px;
+    box-shadow:0 0 0 1px #f6aa5f;
+}
+#cart_box .hako {
+    border-top:3px solid #ddd;
+    clear:both;
+    padding:10px;
+}
+#cart_box .hako span{
+    display:block;
     float:left;
 }
-#cart_box div{
-    width:98%;
-    padding:1% 1%;
-    border-bottom:2px solid #ddd;
+#cart_box .hako span:first-child{
+    margin-right:1%;
 }
-#cart_box div:last-child{
-    border-bottom:none;
+#cart_box .hako span:nth-child(2){
+    width:55%;
+    line-height:70px;
+    font-size:20px;
 }
-#cart_box div span{
+#cart_box .hako span:nth-child(3){
+    width:15%;
+    line-height:70px;
+    font-size:15px;
+}
+#cart_box .hako span:nth-child(4){
+    width:30%;
+}
+#cart_box .hako span:nth-child(5){
+    width:30%;
+    border:none;
+}
+.redmoji{
+    color:red;
+}
+#cart_box2 a{
+    font-size:22px;
+    font-weight:bold;
+}
+#cart_box2 p{
+    font-size:15px;
+    margin-top:10px;
+    border-top:1px solid #ddd;
+    line-height:40px;
+}
+#cart_box3{
+    width:20%;
+    border-radius:5px;
+    box-shadow:0 0 0 3px #ddd;
+    position:absolute;
+    top:55px;
+    left:32%;
+    padding:12px;
+}
+#cart_box3 a{
+    font-size:30px;
+    font-weight:bold;
+}
+#cart_box3 p{
+    font-size:15px;
+    margin-top:10px;
+    border-top:1px solid #ddd;
+    line-height:40px;
+}
+/*history-----------------------------------------------*/
+#history_box{
+    background-color:#fff;
+    width:70%;
+    float:left;
+    margin-left:50px;
+}
+.h1_mar{
+    margin-left:50px;
+}
+.his_hako{
+    border-top:3px solid #ddd;
+    clear:both;
+    padding:10px;
+}
+.his_hako span{
+    display:block;
+    float:left;
+    margin-right:10px;
+}
+.his_hako span:first-child{
+}
+.his_hako span:nth-child(2){
+}
+.his_hako span:nth-child(3){
+    line-height:20px;
+    font-size:20px;
+    font-weight:bold;
+}
+.his_hako span:nth-child(4){
+}
+.his_hako span:nth-child(5){
 }

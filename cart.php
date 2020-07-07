@@ -60,10 +60,12 @@ if(isset($_POST["cart_check"])){
 include "ec_header.php";
 ?>
 <div id="cart_body_box">
-    <div id="cart_box">
 <?php
 if(isset($_SESSION["item_id"])){
-    echo "<div id='notable'>";
+    echo <<<EOH
+    <h1>ショッピングカート</h1>
+    <div id="cart_box">
+EOH;
     include "db_path.php";
     $sql = "SELECT item_id, item_name AS 商品名, item_price AS 価格, quantity AS 数量, image_url FROM object ORDER BY item_id ASC";
     $sth = $dbh->prepare($sql);
@@ -74,10 +76,10 @@ if(isset($_SESSION["item_id"])){
             if($item["item_id"] == $_SESSION["item_id"][$i]){
                 $_SESSION["価格"][$i] = $item["価格"] * $_SESSION["suryo"][$i];
                 echo <<<EOH
-            <div>
+            <div class="hako">
                 <span><img src="{$item["image_url"]}"></span>
-                <span>{$item["商品名"]}</span>
-                <span>{$item["価格"]}円</span>
+                <span class="syohinmei">{$item["商品名"]}</span>
+                <span class="redmoji">￥{$item["価格"]}</span>
                 <span>{$_SESSION["suryo"][$i]}個</span>
                 <span><button>削除</button></span>
             </div>
@@ -88,26 +90,26 @@ EOH;
     echo "</div>";
 }
 ?>
-</div>
 <?php
 if(isset($_SESSION["価格"])){
+    $kosu = count($_SESSION["item_id"]);
     $gokei_messagi = array_sum($_SESSION["価格"]);
     echo <<<EOH
     <div id="cart_box2">
-        <p id="gokei">合計:{$gokei_messagi}円</p>
+        <a href="category.php">お買い物を続ける</a>
+        <p id="gokei">小計({$kosu}個)：<span class="redmoji">￥{$gokei_messagi}</span></p>
         <form action="konyu_kakunin.php" method="post">
             <input type="submit" name="konyu" value="購入">
         </form>
-        <a href="category.php">戻る</a>
     </div>
 EOH;
 }
 else{
-    $gokei_messagi = "カートが空です。";
+    $gokei_messagi = "カートは空です。";
     echo <<<EOH
-    <div id="cart_box2">
+    <div id="cart_box3">
+        <a href="category.php">お買い物をする</a>
         <p id="gokei">{$gokei_messagi}</p>
-        <a href="category.php">戻る</a>
     </div>
 EOH;
 }

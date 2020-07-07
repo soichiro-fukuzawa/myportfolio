@@ -39,26 +39,24 @@ WHERE users.user_id = :user";
     $sth->execute();
     $hisArray = $sth->fetchAll(PDO::FETCH_ASSOC);
 ?>
-<div>
-    <table>
+    <h1 class="h1_mar">購入履歴</h1>
+    <div id="history_box">
         <?php
         foreach($hisArray as $val){
             $sum = $val['価格'] * $val['購入個数'];
+            $ymd = date('Y年m月d日',strtotime($val['注文日']));
             echo <<<EOH
-            <tr>
-                <td>
-                    <img src="{$val['image_url']}">
-                    <span>購入日{$val['注文日']}</span>
-                    <span>商品名{$val['商品名']}</span>
-                    <span>価格{$val['価格']}</span>
-                    <span>購入個数{$val['購入個数']}</span>
-                    <span>購入時合計額{$sum}</span>
-                </td>
-            </tr>
+            <div class="his_hako">
+                    <span><img src="{$val['image_url']}"></span>
+                    <span>購入日:{$ymd}</span>
+                    <span>商品名:{$val['商品名']}</span><br>
+                    <span>価格:{$val['価格']}</span>
+                    <span>購入数:{$val['購入個数']}</span><br>
+                    <span>購入時合計額:{$sum}</span>
+            </div>
 EOH;
         }
         ?>
-    </table>
-</div>
+    </div>
 </body>
 </html>
