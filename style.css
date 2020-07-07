@@ -56,6 +56,24 @@ img{
 .nokaigyo{
     display:inline-block;
 }
+.syohin_box{
+    background-color:#fff;
+    margin-right:50px;
+    width:160px;
+}
+.syohin_box:last-child{
+    margin-right:0;
+}
+.syohin_box input[type="submit"]{
+    cursor:pointer;
+    padding:5px;
+    width:100%;
+    height:40px;
+    background-color:#ddc478;
+    border:none;
+    border-radius:2px;
+    box-shadow:0 0 0 1px #f6aa5f;
+}
 /*ec_header---------------------------------------------*/
 header{
     background-color:#001a33;
@@ -330,4 +348,33 @@ ul.menu:after{
 .his_hako span:nth-child(4){
 }
 .his_hako span:nth-child(5){
+}
+/*konyu--------------------------------------------*/
+#konyu_body{
+    background-color:white;
+}
+.konyu{
+    margin:0 auto;
+    width:50%;
+    border-radius:5px;
+    box-shadow:0 0 0 3px #ddd;
+    padding:12px;
+    text-align:center;
+}
+.konyu input[type="submit"]{
+    margin-top:20px;
+    width:80%;
+    height:40px;
+    background-color:#ddc478;
+    border:none;
+    border-radius:2px;
+    box-shadow:0 0 0 1px #f6aa5f;
+}
+.konyu input[type="submit"]:last-child{
+    width:80%;
+    height:40px;
+    background-color:#ddd;
+    border:none;
+    border-radius:2px;
+    box-shadow:0 0 0 1px #f6aa5f;
 }
