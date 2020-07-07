@@ -22,6 +22,14 @@ $(function(){
            $("ul",this).slideUp("fast");
        });
 });
+$(function(){
+    $(".cate_li").click(function(){
+        $("<form>",{id:"itemselect",action:"syohin.php",method:"post"})
+        .append($("<input>",{type:"hidden",name:"cate",value: $(this).attr("id") }))
+        .appendTo(document.body)
+        .submit();
+    });
+});
     </script>
 </head>
 <body class="bowh">
@@ -47,10 +55,10 @@ WHERE users.user_id = :user";
             $ymd = date('Y年m月d日',strtotime($val['注文日']));
             echo <<<EOH
             <div class="his_hako">
-                    <span><img src="{$val['image_url']}"></span>
+                    <span class="his_img"><img src="{$val['image_url']}"></span>
                     <span>購入日:{$ymd}</span>
                     <span>商品名:{$val['商品名']}</span><br>
-                    <span>価格:{$val['価格']}</span>
+                    <span>価格:￥{$val['価格']}</span>
                     <span>購入数:{$val['購入個数']}</span><br>
                     <span>購入時合計額:{$sum}</span>
             </div>

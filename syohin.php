@@ -48,11 +48,19 @@ else{
            $("ul",this).slideUp("fast");
        });
     });
-    window.onpageshow = function(event) {
+    $(function(){
+        $(".cate_li").click(function(){
+            $("<form>",{id:"itemselect",action:"syohin.php",method:"post"})
+            .append($("<input>",{type:"hidden",name:"cate",value: $(this).attr("id") }))
+            .appendTo(document.body)
+            .submit();
+        });
+    });
+    /*window.onpageshow = function(event) {
 	if (event.persisted) {
 		 window.location.reload();
 	}
-    };
+    };*/
     </script>
 </head>
 <body>

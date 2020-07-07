@@ -9,17 +9,21 @@ print <<<EOH
 <header>
     <div>
         <ul class="menu">
+            <li id="logo"><a href="category.php"><img src="amozon.png"></a></li>
+            <li id="sofa" class="cate_li">ソファ</li>
+            <li id="table" class="cate_li">テーブル</li>
+            <li id="chair" class="cate_li">椅子</li>
+            <li id="denki" class="cate_li">電化製品</li>
 EOH;
 if(isset($_SESSION["name"])){
     print <<<EOH
-    <li class="menu_main">
-        <a href="#">{$_SESSION["name"]}</a>
-        <ul class="sub">
-            <li><a href="history.php">購入履歴</a></li>
-            <li><a href="#">メニュー</a></li>
-            <li><a href="logout.php">ログアウト</a></li>
-        </ul>
-    </li>
+        <li class="menu_main">
+            <a href="#">{$_SESSION["name"]}さん</a>
+            <ul class="sub">
+                <li><a href="history.php">購入履歴</a></li>
+                <li><a href="logout.php">ログアウト</a></li>
+            </ul>
+        </li>
 EOH;
 }
 else{

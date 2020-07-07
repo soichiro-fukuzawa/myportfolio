@@ -19,7 +19,7 @@ if(isset($_POST["name"])){
     if($cnt == 0){
         //パスワードとパスワード２が一致した場合
         if($_POST["password"] == $_POST["password2"]){
-            $inc = count($users) + 1;
+            $inc = count($userArray) + 1;
             $sql = "INSERT INTO users VALUES (:inc,:name,:pass)";
             $sth = $dbh->prepare($sql);
             $sth->bindParam(':inc', $inc, PDO::PARAM_STR);

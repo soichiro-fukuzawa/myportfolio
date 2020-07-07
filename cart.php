@@ -53,6 +53,14 @@ if(isset($_POST["cart_check"])){
            $("ul",this).slideUp("fast");
        });
     });
+$(function(){
+    $(".cate_li").click(function(){
+        $("<form>",{id:"itemselect",action:"syohin.php",method:"post"})
+        .append($("<input>",{type:"hidden",name:"cate",value: $(this).attr("id") }))
+        .appendTo(document.body)
+        .submit();
+    });
+});
 </script>
 </head>
 <body id="cart_body">

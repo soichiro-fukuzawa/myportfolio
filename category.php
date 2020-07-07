@@ -20,6 +20,14 @@ $(function(){
     });
 });
 $(function(){
+    $(".cate_li").click(function(){
+        $("<form>",{id:"itemselect",action:"syohin.php",method:"post"})
+        .append($("<input>",{type:"hidden",name:"cate",value: $(this).attr("id") }))
+        .appendTo(document.body)
+        .submit();
+    });
+});
+$(function(){
        $("ul.sub").hide();
        $("ul.menu li").hover(function(){
            $("ul:not(:animated)",this).slideDown("fast");
@@ -50,6 +58,7 @@ $(function(){
         echo <<<EOH
         <div id="{$user['cate_class']}" class="box">
             <figure class="fig_cate">
+                <figcaption>{$user['cate_name']}</figcaption>
                 <div>
 EOH;
         for($i = 0; $i < 3; $i++){
@@ -58,7 +67,6 @@ EOH;
         }
         echo <<<EOH
                 </div>
-                <figcaption>{$user['cate_name']}</figcaption>
             </figure>
         </div>
 EOH;
