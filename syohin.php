@@ -48,6 +48,11 @@ else{
            $("ul",this).slideUp("fast");
        });
     });
+    window.onpageshow = function(event) {
+	if (event.persisted) {
+		 window.location.reload();
+	}
+    };
     </script>
 </head>
 <body>
@@ -63,7 +68,7 @@ echo "<div id='sotowaku'>";
 foreach($itemArray as $kai){
     $ketakugiri = number_format($kai["価格"]);
     echo <<<EOH
-    <div class="box">
+    <div class="syohin_box">
         <form action="cart.php" method="post"><!-- 応急処置 -->
             <figure class="syo_fig">
                 <img src="{$kai["image_url"]}" alt="{$kai["商品名"]}">

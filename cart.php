@@ -81,7 +81,7 @@ EOH;
                 <span class="syohinmei">{$item["商品名"]}</span>
                 <span class="redmoji">￥{$item["価格"]}</span>
                 <span>{$_SESSION["suryo"][$i]}個</span>
-                <span><button>削除</button></span>
+                <!--<span><button>削除</button></span>-->
             </div>
 EOH;
             }

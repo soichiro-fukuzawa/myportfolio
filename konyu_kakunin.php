@@ -13,12 +13,14 @@ if(isset($_POST["konyu"])){
     $gokei = array_sum($_SESSION["価格"]);
     $gokei_ketakugiri = number_format($gokei);
     $konyu_kakunin = <<<EOH
-        <form method="post">
-            <p>合計:{$gokei_ketakugiri}円</p>
-            <p>購入を確定しますか？</p>
-            <input type="submit" name="kakutei" value="購入確定">
-            <input type="submit" name="carthemodoru" value="カートへ戻る">
-        </form>
+        <div class="konyu">
+            <form method="post">
+                <p>合計金額<span class="redmoji">￥{$gokei_ketakugiri}</span></p>
+                <p>購入を確定しますか？</p>
+                <input type="submit" name="kakutei" value="購入確定">
+                <input type="submit" name="carthemodoru" value="カートへ戻る">
+            </form>
+        </div>
 EOH;
 }
 //このページで購入確定が押された
@@ -54,8 +56,10 @@ elseif(isset($_POST["kakutei"])){
     unset($_SESSION["suryo"]);
     //購入確定時のhtml表記
     $konyu_kakunin = <<<EOH
-            <p>ご購入ありがとうございます。</p>
-            <a href="category.php">カテゴリ一覧へ</a>
+            <div class="konyu">
+                <p>ご購入ありがとうございます。</p>
+                <a href="category.php">カテゴリ一覧へ</a>
+            </div>
 EOH;
 }
 //このページでカートへ戻るが押された
@@ -88,7 +92,7 @@ else{
     });
         </script>
     </head>
-    <body>
+    <body id="konyu_body">
         <?php
         include "ec_header.php";
         print $konyu_kakunin;
