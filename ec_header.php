@@ -7,13 +7,17 @@ else{
 }
 print <<<EOH
 <header>
-    <div>
-        <ul class="menu">
-            <li id="logo"><a href="category.php"><img src="amozon.png"></a></li>
+    <div id="head_right">
+        <ul class="logo_cate">
+            <li id="logo"><a href="category.php"><img src="logo.png" alt="logo"></a></li>
             <li id="sofa" class="cate_li">ソファ</li>
             <li id="table" class="cate_li">テーブル</li>
             <li id="chair" class="cate_li">椅子</li>
             <li id="denki" class="cate_li">電化製品</li>
+        </ul>
+    </div>
+    <div id="head_right">
+        <ul class="menu">
 EOH;
 if(isset($_SESSION["name"])){
     print <<<EOH

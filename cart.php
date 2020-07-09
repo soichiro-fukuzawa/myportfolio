@@ -19,6 +19,17 @@ if(isset($_POST["cart_check"])){
         $_SESSION["suryo"][$max2] = $suryo_cate[0];
     }
 }
+if(isset($_POST["chenge_definition"])){
+    $key = $_POST["chenge_suryo"];
+    $_SESSION["suryo"][$key] = $_POST["chenge_definition"];
+}
+if(isset($_POST["delete"])){
+    $key = $_POST["delete"];
+    unset($_SESSION["item_id"][$key]);
+    $_SESSION["item_id"] = array_values($_SESSION["item_id"]);
+    unset($_SESSION["価格"][$key]);
+    $_SESSION["価格"] = array_values($_SESSION["価格"]);
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -69,7 +80,7 @@ include "ec_header.php";
 ?>
 <div id="cart_body_box">
 <?php
-if(isset($_SESSION["item_id"])){
+if(count($_SESSION["item_id"]) >= 1){
     echo <<<EOH
     <h1>ショッピングカート</h1>
     <div id="cart_box">
@@ -85,12 +96,38 @@ EOH;
                 $_SESSION["価格"][$i] = $item["価格"] * $_SESSION["suryo"][$i];
                 echo <<<EOH
             <div class="hako">
-                <span><img src="{$item["image_url"]}"></span>
-                <span class="syohinmei">{$item["商品名"]}</span>
-                <span class="redmoji">￥{$item["価格"]}</span>
-                <span>{$_SESSION["suryo"][$i]}個</span>
-                <!--<span><button>削除</button></span>-->
+                <div><img src="{$item["image_url"]}"></div>
+                <div class="item_joho">
+                    <span class="syohinmei">{$item["商品名"]}</span><br>
+                    <span class="redmoji kakaku">￥{$item["価格"]}</span>
+                    <form method="post">
+EOH;
+                if(!isset($_POST["chenge"]) || isset($_POST["chenge_definition"])){
+                    echo <<<EOH
+                        <span>{$_SESSION["suryo"][$i]}個</span>
+                        <input type="hidden" name="chenge" value="{$i}">
+                        <input type="submit" value="数量変更">
+EOH;
+                }
+                else{
+                    echo "<p class='nokaigyo'>数量:</p>"."<select name='chenge_definition'>";
+                    for($a = 1; $a <= $item['数量']; $a++){
+                        echo "<option value='{$a}'>{$a}</option>";
+                    }
+                    echo <<<EOH
+                    </select>
+                        <input type="hidden" name="chenge_suryo" value="{$i}">
+                        <input type="submit" value="確定">
+EOH;
+                }
+                echo <<<EOH
+                </form>
+                <form method="post">
+                    <input type="hidden" name="delete" value="{$i}">
+                    <input type="submit" value="削除">
+                </form>
             </div>
+        </div>
 EOH;
             }
         }
@@ -99,7 +136,7 @@ EOH;
 }
 ?>
 <?php
-if(isset($_SESSION["価格"])){
+if(count($_SESSION["価格"]) >= 1){
     $kosu = count($_SESSION["item_id"]);
     $gokei_messagi = array_sum($_SESSION["価格"]);
     echo <<<EOH
