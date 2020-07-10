@@ -8,6 +8,17 @@ body{
     width:100%;
 }
 /*------------------------------------------------------*/
+.indexhead{
+    text-align:center;
+}
+.indexhead a img{
+    display:inline-block;
+    height:30px;
+}
+.indexhead a img:hover{
+    box-shadow:0 0 0 1px #fff;
+    border-radius:2px;
+}
 #sotowaku{
     display:flex;
     justify-content: center;

@@ -42,12 +42,12 @@ $(function(){
 <?php
     include "ec_header.php";
     include "db_path.php";
-    
+    //databaseのカテゴリーテーブルをカテゴリーidの昇順で配列へ入れる
     $sql = "SELECT * FROM category ORDER BY cate_id ASC";
     $sth = $dbh->prepare($sql);
     $sth->execute();
     $cateArray = $sth->fetchAll(PDO::FETCH_ASSOC);
-    
+    //オブジェクトテーブル(商品のデータが入っている)をカテゴリーidの昇順で配列へ入れる
     $sql = "SELECT cate_id, image_url FROM object ORDER BY cate_id ASC;";
     $sth = $dbh->prepare($sql);
     $sth->execute();
@@ -61,6 +61,7 @@ $(function(){
                 <figcaption>{$user['cate_name']}</figcaption>
                 <div>
 EOH;
+        //商品のidの1～3の3つカテゴリーの例として画像を表示
         for($i = 0; $i < 3; $i++){
             echo "<img src='{$obArray[$a]["image_url"]}'>";
             $a++;

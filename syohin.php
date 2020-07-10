@@ -1,5 +1,6 @@
 <?php
 session_start();
+//category.phpからポストされてきた
 if(isset($_POST["cate"])){
     $cate = $_POST["cate"];
     include "db_path.php";
@@ -9,6 +10,7 @@ if(isset($_POST["cate"])){
     $sth->execute();
     $itemselect = $sth->fetchAll(PDO::FETCH_ASSOC);
 }
+//それ以外の方法でこのページへきた
 else{
     header('Location:category.php');
 }
@@ -55,7 +57,7 @@ foreach($itemArray as $kai){
     $ketakugiri = number_format($kai["価格"]);
     echo <<<EOH
     <div class="syohin_box">
-        <form action="cart.php" method="post"><!-- 応急処置 -->
+        <form action="cart.php" method="post">
             <figure class="syo_fig">
                 <img src="{$kai["image_url"]}" alt="{$kai["商品名"]}">
                 <figcaption>{$kai["商品名"]}</figcaption>
@@ -74,12 +76,12 @@ EOH;
             echo <<<EOH
             </select>
             <input type="hidden" name="cart_check" value="{$itemArray[0]["cate_class"]}">
-            <br><input type="submit" value="カートへ追加"><!-- 応急処置 -->
+            <br><input type="submit" value="カートへ追加">
 EOH;
         }
         echo <<<EOH
             </figure>
-        </form><!-- 応急処置 -->
+        </form>
     </div>
 EOH;
 }

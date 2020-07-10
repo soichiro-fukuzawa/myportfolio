@@ -28,16 +28,15 @@ if(isset($_POST["name"])){
             $sth->execute();
             $error_message = "登録が完了いたしました。";
         }
+        //パスワードとパスワード２が一致しない
         else{
             $error_message = "パスワードが一致しませんでした。";
         }
     }
+    //ポストされたnameが既に存在していた
     else{
         $error_message = "入力されたユーザーネームは既に使われています。";
     }
-}
-else{
-    $error_message = "ユーザー情報を入力してください。";
 }
             
 ?>
@@ -55,8 +54,8 @@ else{
     </script>
 </head>
 <body id="index_body">
-    <header>
-        <p>新規登録ページ</p>
+    <header class="indexhead">
+        <a href="index.php"><img src="logo.png" alt="logo"></a>
     </header>
     <div id="regist_box">
         <h1>アカウント作成</h1>

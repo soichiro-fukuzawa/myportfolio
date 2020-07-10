@@ -1,6 +1,7 @@
 <?php
 session_start();
 $error_message = "";
+//ポストされたusernameがdatabaseに存在するか
 if(isset($_POST["name"])){
     include "db_path.php";
     $sql = "SELECT * FROM users WHERE user_name = :name";
@@ -43,8 +44,8 @@ if(isset($_POST["name"])){
     </script>
 </head>
 <body id="index_body">
-    <header>
-        
+    <header class="indexhead">
+        <a href="index.php"><img src="logo.png" alt="logo"></a>
     </header>
     <div id="index_box">
     <h1>ログイン</h1>

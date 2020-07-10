@@ -11,6 +11,7 @@ include "login_check.php";
     <link rel="stylesheet" href="style.css">
     <script src="jquery-3.4.1.min.js"></script>
     <script type="text/javascript">
+/*ドロップダウンメニュー*/
 $(function(){
        $("ul.sub").hide();
        $("ul.menu li").hover(function(){
@@ -20,6 +21,7 @@ $(function(){
            $("ul",this).slideUp("fast");
        });
 });
+/*headerにあるカテゴリーからカテゴリーIDをsyohin.phpへ飛ばし、カテゴリーIDの商品を表示*/
 $(function(){
     $(".cate_li").click(function(){
         $("<form>",{id:"itemselect",action:"syohin.php",method:"post"})
@@ -48,6 +50,7 @@ WHERE users.user_id = :user";
     <h1 class="h1_mar">購入履歴</h1>
     <div id="history_box">
         <?php
+        //category.phpもしくはheaderのカテゴリーから選択された商品一覧を表示
         foreach($hisArray as $val){
             $sum = $val['価格'] * $val['購入個数'];
             $ymd = date('Y年m月d日',strtotime($val['注文日']));
