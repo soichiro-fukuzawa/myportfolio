@@ -68,7 +68,7 @@ if(isset($_POST["name"])){
     </div>
     <div id="index_box2">
         <p>新しいお客様ですか？</p>
-        <button><a href="regist.php">アカウント作成はこちら</a></button>
+        <button onclick="location.href='regist.php'">アカウント作成はこちら</button>
         <!--<p><a href="#">管理人</a></p>-->
         <div><?php print $error_message; ?></div>
     </div>
