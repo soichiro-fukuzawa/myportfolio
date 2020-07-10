@@ -1,7 +1,5 @@
 <!DOCTYPE html>
 <?php 
-//SELECT COUNT(users.user_id) FROM history LEFT JOIN users ON history.user_id = users.user_id LEFT JOIN object ON history.item_id = object.item_id WHERE users.user_id = 1 GROUP BY users.user_id;
-//SELECT order_date, history.user_id, user_name, history.item_id, item_name, item_price, image_url, history.sales_quantity FROM history LEFT JOIN users ON history.user_id = users.user_id LEFT JOIN object ON history.item_id = object.item_id WHERE users.user_id = 1;
 session_start();
 include "login_check.php";
 ?>

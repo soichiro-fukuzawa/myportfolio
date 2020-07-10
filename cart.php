@@ -40,30 +40,15 @@ if(isset($_POST["delete"])){
 <link rel="stylesheet" href="style.css">
 <script src="jquery-3.4.1.min.js"></script>
 <script type="text/javascript">
-/*$(function(){
-    var cartArray = $("span:ntr-child(2)").html();
-    $('tr').each(function(){ 
-        cartArray.push();
+$(function(){
+    $("ul.sub").hide();
+    $("ul.menu li").hover(function(){
+        $("ul:not(:animated)",this).slideDown("fast");
+    },
+    function(){
+        $("ul",this).slideUp("fast");
     });
-    var total = 0;
-    for (var i = 0; i < someArray.length; i++) {
-        total += someArray[i] << 0;
-    }
-    $("#gokei").html(total);
-    $("span:ntr-child(2)").html();
-    $('table').on('click', 'button', function(e){
-       $(this).closest('tr').remove();
-    });
-});*/
-    $(function(){
-       $("ul.sub").hide();
-       $("ul.menu li").hover(function(){
-           $("ul:not(:animated)",this).slideDown("fast");
-       },
-       function(){
-           $("ul",this).slideUp("fast");
-       });
-    });
+ });
 $(function(){
     $(".cate_li").click(function(){
         $("<form>",{id:"itemselect",action:"syohin.php",method:"post"})

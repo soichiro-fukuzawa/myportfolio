@@ -52,15 +52,6 @@ else{
     <link rel="stylesheet" href="style.css">
     <script src="jquery-3.4.1.min.js"></script>
     <script type="text/javascript">
-    $(function(){
-       $("ul.sub").hide();
-       $("ul.menu li").hover(function(){
-           $("ul:not(:animated)",this).slideDown("fast");
-       },
-       function(){
-           $("ul",this).slideUp("fast");
-       });
-    });
     </script>
 </head>
 <body id="index_body">

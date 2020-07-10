@@ -1,13 +1,6 @@
 <?php
 session_start();
 include "login_check.php";
-/*//cart.phpで数量変更が押されてきた
-if(isset($_POST["suryohenko"])){
-    for($i=0;$i<$_POST["syurui_kazu"];$i++){
-        $_SESSION["kosu"][$i] = $_POST["kosu".$i];
-    }
-    header('Location:cart.php');
-}*/
 //cart.phpで購入が押されてきた
 if(isset($_POST["konyu"])){
     $gokei = array_sum($_SESSION["価格"]);

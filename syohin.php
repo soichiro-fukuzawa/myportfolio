@@ -22,23 +22,6 @@ else{
     <link rel="stylesheet" href="style.css">
     <script src="jquery-3.4.1.min.js"></script>
     <script type="text/javascript">
-/*$(function(){
-    $("button").click(function(){
-        var ops = [];
-        $('select').each(function(){ 
-          ops.push($(this).val()); 
-        });
-        var sele = $(this).prev().attr("id");
-        sessionStorage.setItem("id",sele);
-        sessionStorage.setItem("kosu",ops);
-        //$(this).after("<p>"+"カートへ追加しました"+"</p>");
-    });
-    var cartArray = [];
-    $('select').each(function(){ 
-        cartArray.push(sessionStonrage["id"]);
-        cartArray.push(sessionStonrage["kosu"]);
-    });
-});*/
     $(function(){
        $("ul.sub").hide();
        $("ul.menu li").hover(function(){
@@ -56,11 +39,6 @@ else{
             .submit();
         });
     });
-    /*window.onpageshow = function(event) {
-	if (event.persisted) {
-		 window.location.reload();
-	}
-    };*/
     </script>
 </head>
 <body>

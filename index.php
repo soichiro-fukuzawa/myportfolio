@@ -9,7 +9,6 @@ if(isset($_POST["name"])){
     $sth->execute();
 
     $userArray = $sth->fetchAll(PDO::FETCH_ASSOC);
-    //print_r($userArray);
     if(count($userArray) > 0){
         //IDが存在する
         if($userArray[0]["user_pass"] == $_POST["password"]){
@@ -41,15 +40,6 @@ if(isset($_POST["name"])){
     <link rel="stylesheet" href="style.css">
     <script src="jquery-3.4.1.min.js"></script>
     <script type="text/javascript">
-    $(function(){
-       $("ul.sub").hide();
-       $("ul.menu li").hover(function(){
-           $("ul:not(:animated)",this).slideDown("fast");
-       },
-       function(){
-           $("ul",this).slideUp("fast");
-       });
-    });
     </script>
 </head>
 <body id="index_body">
@@ -69,7 +59,6 @@ if(isset($_POST["name"])){
     <div id="index_box2">
         <p>新しいお客様ですか？</p>
         <button onclick="location.href='regist.php'">アカウント作成はこちら</button>
-        <!--<p><a href="#">管理人</a></p>-->
         <div><?php print $error_message; ?></div>
     </div>
 </body>
